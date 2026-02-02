@@ -1,0 +1,1 @@
+enum CalendarEnum{initial, loading, success, error}
