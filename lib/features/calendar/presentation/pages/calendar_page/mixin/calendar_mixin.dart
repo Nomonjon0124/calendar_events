@@ -34,7 +34,7 @@ mixin CalendarMixin on State<CalendarPage> {
   void _loadEventsForSelectedDay([DateTime? date]) {
     final blocState = context.read<CalendarBloc>().state;
     final currentDate = date ?? blocState.selectedDate ?? DateTime.now();
-    final start = DateTime(currentDate.year, currentDate.month, currentDate.day);
+    final start = DateTime(currentDate.year, currentDate.month, 1);
     final end = DateTime(currentDate.year, currentDate.month + 1, 1);
 
     context.read<CalendarBloc>().add(LoadEvents(start, end));
